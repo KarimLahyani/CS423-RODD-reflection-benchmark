@@ -1,0 +1,5 @@
+# data_prep
+numpy>=1.24
+Pillow>=10.0
+# added later by the baselines / evaluation steps:
+# ultralytics, opencv-python, scikit-learn, scikit-image, pycocotools

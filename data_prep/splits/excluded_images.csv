@@ -1,0 +1,6 @@
+file_name,orig_split,num_boxes_in_image,reason
+053cab43-bo267.jpg,both,3,"Conflicting labels for identical bounding box: bbox [80, 224, 202, 124] labeled as [cupor (id=6, split=train), bowlor (id=0, split=train)]"
+1661909b-bo73.jpg,both,3,"Conflicting labels for identical bounding box: bbox [285, 16, 307, 247] labeled as [bowlor (id=0, split=train), cupor (id=6, split=val)]"
+45e1f7cf-bo152.jpg,val,3,"Conflicting labels for identical bounding box: bbox [61, 177, 234, 222] labeled as [cupor (id=6, split=val), bowlor (id=0, split=val)]"
+a7827953-IMG_20240917_144851_1.jpg,train,3,"Conflicting labels for identical bounding box: bbox [885, 1, 232, 178] labeled as [applemi (id=11, split=train), orangemi (id=17, split=train)]"
+bb2a85a5-IMG_20240917_144424_1.jpg,train,2,"Conflicting labels for identical bounding box: bbox [614, 596, 144, 129] labeled as [applemi (id=11, split=train), bowlmi (id=10, split=train)]"

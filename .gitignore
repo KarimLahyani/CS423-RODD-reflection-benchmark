@@ -1,0 +1,23 @@
+# --- Dataset (authors' data, 1.8 GB): get it from github.com/jirouvan/ROD ---
+RODD/
+*.zip
+
+# --- Regenerable outputs (rebuild with data_prep/scripts) ---
+data_prep/out/
+data_prep/cache/
+
+
+# --- Internal notes ---
+docs/internal/
+
+# --- Python / editors / OS ---
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+~$*
