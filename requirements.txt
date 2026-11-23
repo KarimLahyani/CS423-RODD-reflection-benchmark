@@ -1,5 +1,9 @@
 # data_prep
 numpy>=1.24
 Pillow>=10.0
-# added later by the baselines / evaluation steps:
-# ultralytics, opencv-python, scikit-learn, scikit-image, pycocotools
+# evaluation
+pycocotools==2.0.11
+# training
+ultralytics==8.4.216
+# added later by the baselines step:
+# opencv-python, scikit-learn, scikit-image
