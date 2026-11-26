@@ -1,0 +1,32 @@
+# Shared Ultralytics 8.4.216 training settings for every YOLO run (M20 and M10).
+#
+# Use from the repository root, because the cfg path is relative to the working directory:
+#   YOLO(weights).train(cfg="configs/train.yaml", data=..., seed=..., project=..., name=...)
+# Set per run, not here: model, data, seed, project, name.
+# Always pass data: if it is missing, Ultralytics silently falls back to coco8.yaml.
+# Explicit arguments override the values in this file.
+# On Colab, set project to a Google Drive folder, so last.pt survives a disconnect.
+#
+# Pilot (K2): Colab T4, Python 3.13, torch 2.14.1, v2/20class, yolov10s, imgsz 640, batch 16,
+# 2 epochs: GPU memory 6.2 GB, about 4.5 min per epoch including validation, mAP50 0.439.
+# The pilot ran without mosaic (close_mosaic=10 covered both epochs) and with optimizer=auto,
+# which picked AdamW with lr0 0.000417, so its mAP50 does not predict results with this file.
+#
+# Choices that differ from the Ultralytics defaults:
+# - epochs 50 (default 100): about 4 to 5 h per run on a T4.
+# - patience 10 (default 100): stops a run that has stopped improving.
+# - optimizer SGD (default auto): auto depends on the iteration count, so at 50 epochs it would
+#   pick AdamW for v1 and v2 but MuSGD for orig. Pinning uses one optimizer for every run.
+# Written out so they stay fixed, although they equal the defaults:
+#   imgsz, batch, lr0, close_mosaic, deterministic, plots.
+# save_period stays unset: last.pt is saved every epoch and is enough to resume.
+
+imgsz: 640
+batch: 16
+epochs: 50
+patience: 10
+optimizer: SGD
+lr0: 0.01
+close_mosaic: 10
+deterministic: true
+plots: true
