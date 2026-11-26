@@ -10,6 +10,15 @@ Scoring scripts and ground-truth generation for the RODD reflected-object benchm
 ```
 Builds all 7 ground-truth JSON files under `datasets/gt/` (`orig_val.json`, `orig_val_union.json`, `orig_val_records.json`, `v1_val.json`, `v1_test.json`, `v2_val.json`, `v2_test.json`). Always uses 20-class IDs.
 
+### Detections
+```bash
+.venv/Scripts/python.exe evaluation/predict.py --weights W.pt --images DIR --out FILE.json \
+    [--imgsz 640] [--conf 0.001] [--max-det 100] [--device 0] [--batch 16]
+```
+Runs a 20-class (M20) or 10-class (M10) YOLO model on every image directly inside `DIR` and writes the
+detections format below (`category_id` is the model's class index). Boxes are clipped to the image,
+at most 100 per image, highest scores first. The file is written to `FILE.json.part` and then renamed.
+
 ### Scoring
 ```bash
 .venv/Scripts/python.exe evaluation/score.py --gt GT.json --dets DETS.json --classes {20,10} --out OUT.json \
